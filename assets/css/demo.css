@@ -351,8 +351,43 @@
 .section-download{
     padding-top: 130px;
 }
+
+blockquote.description {
+    border-left: 5px solid deepskyblue;
+    padding: 10px 0 0 30px;
+    font-size: 1.5em;
+}
+
+blockquote.description + ul {
+  list-style-type: none;
+  font-size: 1.6rem;
+}
+
+blockquote.description + ul > li {
+  padding: 5px 0 5px 15px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-box-shadow .3s,-webkit-transform .3s, background .5s ease;
+  transition: box-shadow .3s,transform .3s, background .5s ease;
+  -webkit-backface-visibility: hidden;
+}
+
+blockquote.description + ul > li:hover {
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.8);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.8);
+  -webkit-transform: translate(0, -4px);
+  transform: translate(0, -4px);
+  background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+blockquote.description + ul > li {
+  background: linear-gradient(45deg, #1d4350, #a43931);
+}
+
 .section-download .description{
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 .section-download h4{
     margin-bottom: 25px;
@@ -381,7 +416,11 @@
 .brand .h1-seo{
     font-size: 2.8em;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 350;
+}
+
+.brand .h1-seo+h3 {
+  font-weight: 600;
 }
 .brand .n-logo{
     max-width: 180px;

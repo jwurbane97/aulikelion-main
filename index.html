@@ -26,7 +26,13 @@
   <link href="./assets/css/now-ui-kit.css" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/css/demo.css" rel="stylesheet" />
+  <link href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
   <style>
+    * {
+      font-family: 'Montserrat', 'Spoqa Han Sans', 'Sans-serif';
+      font-weight: 100;
+    }
+
     .black-cover {
       position: absolute;
       width: 100%;
@@ -264,6 +270,27 @@
         opacity: 0;
       }
     }
+
+    .video-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.5);
+    }
+
+    dfn {
+      padding: 5px;
+      color: black;
+      font-weight: 700;
+      font-style: normal;
+      background: #FFCD01;
+    }
   </style>
 </head>
 
@@ -308,7 +335,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
         <a class="navbar-brand" href="./index.html" rel="tooltip" title="아주대학교 멋쟁이사자처럼" data-placement="bottom" target="_blank">
-                    멋쟁이사자처럼(아주대)
+                    <img src="https://d2hmp4n7p97ldw.cloudfront.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png" width="20%">
                 </a>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
@@ -331,13 +358,13 @@
   </nav>
   <!-- End Navbar -->
   <div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/aulikelion-back.jpg');">
+    <div class="page-header clear-filter" filter-color="ajou-blue">
+      <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/1498359907499.jpg');">
       </div>
       <div class="container">
         <div class="content-center brand">
           <img class="n-logo" src="./assets/img/aulikelion.png" alt="">
-          <h1 class="h1-seo">강한 레지스탕스 멋사</h1>
+          <h1 class="h1-seo">우리는, 하고 싶은게 너무나도 많은</h1>
           <h3>아주대학교 멋쟁이사자처럼</h3>
         </div>
         <h6 class="category category-absolute">Organization by
@@ -354,24 +381,37 @@
           <div class="row">
             <div class="col-lg-6 col-md-12">
               <h2 class="title"><img src="https://d2hmp4n7p97ldw.cloudfront.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png" width="50%"></h2>
-              <h5 class="description">
-                                          <dfn>멋쟁이사자처럼</dfn>은 기술적 장벽때문에 생각을 표현하지 못한 비전공자분들과 감동의 순간을 만들어 가고 싶습니다. 이루고자 하는 생각, <strong>웹프로그래밍</strong>을 통해 실현하세요.<hr>
-                                          <ul>
-                                            <li>루비 및 레일즈 통한 웹프로그래밍 스터디</li>
-                                            <li>Git, Slack 등 협업도구 통한 협업 경험</li>
-                                            <li>실제 아이디어의 서비스화</li>
-                                            <li>온라인 강의 수강</li>
-                                          </ul>
-                                      </h5>
+              <blockquote class="description">
+                  <dfn>멋쟁이사자처럼</dfn>은 기술적 장벽 때문에<br>아이디어를 세상에 표현하지 못한 비전공자분들과<br>감동의 순간을 만들어 가고 싶습니다.<br>여러분의 모든 아이디어, <strong>웹프로그래밍</strong>을 통해 실현하세요.<hr>
+              </blockquote>
+              <ul>
+                <li>루비 및 레일즈 통한 <strong>웹프로그래밍</strong> 스터디</li>
+                <li>Git, Slack 등 협업도구 통한 <strong>협업 경험</strong></li>
+                <li>아이디어의 <strong>실제 서비스화</strong></li>
+                <li>다양한 분야에서의 <strong>인적 교류</strong></li>
+                <li><strong>온라인 강의 (uniLion)</strong> 수강</li>
+              </ul>
               <a href="http://likelion.net" class="btn btn-primary btn-round btn-lg" target="_blank">멋쟁이사자처럼</a>
               <a href="http://list.likelion.org" class="btn btn-primary btn-simple btn-round btn-lg" target="_blank">전국 멋사 대학교 목록</a>
             </div>
-            <div class="col-lg-6 col-md-12 text-center">
-              <img src="https://d2hmp4n7p97ldw.cloudfront.net/assets/home/slide/02-slogan-f77dde1a45e987c0c1c2603a1dfcddbde2a7a1d5750e1ee7ff115e415a56b0db.png" height="100%">
+            <div class="col-lg-6 col-md-12 text-center" style="padding: 5rem;">
+              <img src="https://d2hmp4n7p97ldw.cloudfront.net/assets/home/slide/02-slogan-f77dde1a45e987c0c1c2603a1dfcddbde2a7a1d5750e1ee7ff115e415a56b0db.png" width="300px">
             </div>
           </div>
         </div>
       </div>
+
+      <div class="section" style="padding: 0;">
+        <video poster="//t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/2YH6/image/4dpPdc1367zGYYqTxnKuZG9-wt4.jpg" autoplay muted loop width="100%" src="https://video-yyz1-1.xx.fbcdn.net/v/t43.1792-2/10000000_346980112379395_8660204560519790592_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MjUzMiwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=783&oh=377d90dc73c07f990472e8a22388453f&oe=5A4DDAA3"></video>
+        <div class="container text-center video-cover">
+          <h2 class="text-white">전세계 곳곳을 여행하는 그들의 이야기를 확인하세요.</h2>
+          <div class="links">
+            <a href="https://brunch.co.kr/@likelion" class="btn btn-primary btn-round btn-lg" target="_blank">지구는 둥그니까</a>
+            <a href="https://www.facebook.com/like.magellan" class="btn btn-primary btn-simple btn-round btn-lg" target="_blank">지구는 둥그니까(페이스북)</a>
+          </div>
+        </div>
+      </div>
+
       <div class="section" id="carousel">
         <div class="container">
           <div class="row justify-content-center">
@@ -381,13 +421,15 @@
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
-                    <img class="d-block" src="assets/img/ideathon.jpg" alt="Halfton">
+                    <img class="d-block" src="assets/img/1498359907499.jpg" alt="Halfton">
                     <div class="black-cover"></div>
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>교내 MT 겸 아이디어톤</h5>
+                      <h5>교내 MT(교내 아이디어톤)</h5>
                     </div>
                   </div>
                   <div class="carousel-item">
@@ -402,6 +444,20 @@
                     <div class="black-cover"></div>
                     <div class="carousel-caption d-none d-md-block">
                       <h5>대학연합아이디어톤 (역삼)</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block" src="assets/img/21462773_1621456721212451_2007008076335327505_n.jpg" alt="hackathon1">
+                    <div class="black-cover"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>2017 멋사 해커톤 (여의도)</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block" src="assets/img/21557491_1621456194545837_2284759230569326304_n.jpg" alt="hackathon2">
+                    <div class="black-cover"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>2017 멋사 해커톤 (여의도)</h5>
                     </div>
                   </div>
                 </div>
@@ -452,29 +508,25 @@
                     <div class="tab-pane active" id="home" role="tabpanel">
                       <p>
                         <img src="assets/img/candi.png" alt="candidaily">
-                        <hr>
-                        대선후보의 행보를 타임라인 형태로 제공하는 서비스입니다.
+                        <hr> 대선후보의 행보를 타임라인 형태로 제공하는 서비스입니다.
                       </p>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
                       <p>
                         <img src="assets/img/ajoufestival.png" alt="aufestival">
-                        <hr>
-                        교내 학생들에게 축제 정보에 좀 더 쉽게 접근할 수 있도록 부스 및 라인업 정보를 제공합니다. 16년과 17년도에 각각 개발되었으며, 매년 1만건 이상의 접속 기록을 달성하였습니다. (16년도 9천건, 17년도 1만 3천건)
+                        <hr> 교내 학생들에게 축제 정보에 좀 더 쉽게 접근할 수 있도록 부스 및 라인업 정보를 제공합니다. 16년과 17년도에 각각 개발되었으며, 매년 1만건 이상의 접속 기록을 달성하였습니다. (16년도 9천건, 17년도 1만 3천건)
                       </p>
                     </div>
                     <div class="tab-pane" id="messages" role="tabpanel">
                       <p>
                         <img src="assets/img/auclub.png" alt="auclub">
-                        <hr>
-                        교내에 존재하는 동아리에 대한 정보를 한눈에 볼 수 있도록 카테고리별로 상세 내용을 제공합니다.
+                        <hr> 교내에 존재하는 동아리에 대한 정보를 한눈에 볼 수 있도록 카테고리별로 상세 내용을 제공합니다.
                       </p>
                     </div>
                     <div class="tab-pane" id="settings" role="tabpanel">
                       <p>
                         <img src="assets/img/mersmap.jpg" alt="mersmap">
-                        <hr>
-                        네티즌들의 참여로 중동호흡기증후군(메르스) 감염 환자들이 거쳐 간 것으로 파악되는 전국 병원을 정리해 화제가 됐던 웹사이트입니다. 아주대학교 멋쟁이사자처럼 출신의 학생이 개발하였으며, 당시 500만건의 접속 기록을 달성하기도 했습니다.
+                        <hr> 네티즌들의 참여로 중동호흡기증후군(메르스) 감염 환자들이 거쳐 간 것으로 파악되는 전국 병원을 정리해 화제가 됐던 웹사이트입니다. 아주대학교 멋쟁이사자처럼 출신의 학생이 개발하였으며, 당시 500만건의 접속 기록을 달성하기도 했습니다.
                       </p>
                     </div>
                   </div>
@@ -495,6 +547,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#messages1" role="tab">경기하프톤</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#hackathon" role="tab">멋사 해커톤</a>
                   </li>
                 </ul>
                 <div class="card-block">
@@ -519,6 +574,13 @@
                         <strong>경희대학교(국제), 아주대학교, 단국대학교(천안), 남서울대학교, 강남대학교, 성공회대학교</strong> 6개교가 한자리에 모였습니다! 17년 5월 28일, 경기창조문화허브(광교)에서 각자 자신이 개발하고자하는 아이디어를 설계, 개발하고 발표하는 시간을 가졌습니다. 하프톤 페이지에서 각자 개발한 아이디어에 대해 투표를 진행, 시상하였습니다.
                       </p>
                     </div>
+                    <div class="tab-pane" id="hackathon" role="tabpanel">
+                      <p>
+                        <img src="assets/img/21462773_1621456721212451_2007008076335327505_n.jpg" alt="">
+                        <hr>
+                        여의도 KBS아레나에서 전국 모든 대학교의 멋사 5기 학생들이 모여 해커톤을 진행했습니다!
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -540,41 +602,6 @@
             </div>
           </div>
           <div class="space-50"></div>
-          <div id="images">
-            <h4>운영진</h4>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="category">전지원(사이버보안)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20246439_1372766216111297_3895560762622200674_n.jpg?oh=c00ae2383ecb9083f53eb09cc5e636b3&oe=59F74713" alt="Rounded Image" class="rounded img-raised">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">이동건(경기대 컴퓨터과학)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/13521913_988475037932196_8805472172915421461_n.jpg?oh=1207fc459ca545d81a86af65510d6bd2&oe=599C6794" alt="Circle Image" class="rounded">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">장순호(교통시스템공학)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/19059185_1431576480231898_2005178879351867976_n.jpg?oh=1b1dbb4b1890520be675dd3f01069baa&oe=59D345F3" alt="Raised Image" class="rounded img-raised">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">김호영(미디어)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/12088106_628628870573319_1601616719817720267_n.jpg?oh=09ba9054fd078690449f99711eabd379&oe=59E283AA" alt="Thumbnail Image" class="rounded-circle img-raised">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">나민지(소프트웨어)</p>
-                <img src="assets/img/minji.png" alt="Raised Image" class="rounded img-raised">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">김태우(미디어)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/1560455_784679504984531_5970560232980378887_n.jpg?oh=e74bf84983b81671edc6e2813bdf945d&oe=59CF6D48" alt="Thumbnail Image" class="rounded-circle img-raised">
-              </div>
-              <div class="col-sm-3">
-                <p class="category">박형철(사이버보안)</p>
-                <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/12919804_1035638696509355_3710386047744024288_n.jpg?oh=d83aa7362f0431409f45a3328bdce308&oe=59D26050" alt="Thumbnail Image" class="rounded-circle img-raised">
-              </div>
-            </div>
-            <div class="row">
-            </div>
-          </div>
         </div>
       </div>
 
@@ -583,7 +610,7 @@
           <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-8">
               <h2 class="title">지원 관련</h2>
-              <h5 class="description"><strong>지원 시기가 아닙니다.</strong> 중앙에서 별도 지침이 내려오는대로 공지하도록 하겠습니다.</h4>
+              <h5 class="description"><strong>6기 지원 일정을 조율하고 있습니다.</strong><br>지침이 내려오는대로 공지하도록 하겠습니다.</h4>
                         </div>
                     </div>
                 </div>
@@ -636,6 +663,22 @@
   $(document).ready(function() {
     // the body of this function is in assets/js/now-ui-kit.js
     $(".preloader").css('display', 'none');
+    var header = $('.page-image-header');
+    var backgrounds = new Array(
+      'url(assets/img/aulikelion-back.jpg)',
+      'url(assets/img/ideathon.jpg)',
+      'url(assets/img/ideathon.jpg)',
+      'url(assets/img/ideathon.jpg)'
+    );
+    var current = 0;
+
+    function nextBackground() {
+      header.css('background-image',backgrounds[current = ++current % backgrounds.length]);
+      setTimeout(nextBackground, 1000);
+    }
+
+    setTimeout(nextBackground, 1000);
+    header.css('background', backgrounds[0]);
   });
 
   function scrollToDownload() {
@@ -646,6 +689,15 @@
       }, 1000);
     }
   }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111943810-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111943810-1');
 </script>
 
 </html>
