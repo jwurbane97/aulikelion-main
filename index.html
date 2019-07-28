@@ -2,690 +2,135 @@
 <html lang="ko">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="shortcut icon" href="https://d2hmp4n7p97ldw.cloudfront.net/assets/favicons/favicon-841c731d4bf227cdbfe4fe4245d7750b2c18c37f61810aa6100de9174db89e4f.ico" />
-  <meta http-equiv="X-UA-Compatible" content="IE=EDGE;IE=9;">
-  <meta property="og:title" content="LIKE LION :: 아주대학교">
-  <meta property="og:type" content="아이디어,구현,프로그래밍,웹,루비,레일즈,네트워킹">
-  <meta property="og:url" content="http://ajou.likelion.org">
-  <meta property="og:image" content="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16640532_1844083275849245_8807518748691062813_n.png?oh=4ed1b3ed6d0c6f011d060244c2bc6db3&oe=592AE535">
-  <meta property="og:description" content="내 손으로 만드는 내 아이디어! 당신의 아이디어를 구현하세요">
-  <meta name="keywords" content="아이디어,구현,프로그래밍,웹,루비,레일즈,네트워킹">
-  <meta name="author" content="Ji Won Jeon">
-  <meta name="description" content="아주대학교 멋쟁이사자처럼 웹페이지입니다.">
-  <meta name="msapplication-TileColor" content="#0066ff">
-  <meta name="theme-color" content="#0066ff">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>LIKELION :: 아주대학교</title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-  <!-- CSS Files -->
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./assets/css/now-ui-kit.css" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="./assets/css/demo.css" rel="stylesheet" />
-  <link href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-  <style>
-    * {
-      font-family: 'Montserrat', 'Spoqa Han Sans', 'Sans-serif';
-      font-weight: 100;
-    }
-
-    .black-cover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #32386D;
-      font-family: Helvetica, Arial, sans-serif;
-    }
-
-    .preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: skyblue;
-      z-index: 10000;
-    }
-
-    .demo {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 500px;
-      height: 140px;
-      margin-top: -70px;
-      padding: 10px;
-      border-radius: 20px;
-      transform: translateX(-50%);
-      z-index: 1000;
-    }
-
-    .demo__colored-blocks {
-      overflow: hidden;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 500px;
-      height: 100%;
-      margin-left: -250px;
-      padding: 10px;
-      border-radius: 20px;
-      perspective: 1000px;
-      animation: demoAnim 4s ease-in-out infinite, contAnim 4s infinite;
-    }
-
-    .demo__colored-blocks-rotater {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      animation: rotation 1.3s linear infinite;
-    }
-
-    .demo__colored-blocks-inner {
-      overflow: hidden;
-      position: relative;
-      height: 100%;
-      background: #32386D;
-      border-radius: inherit;
-    }
-
-    .demo__colored-block {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 300%;
-      height: 300%;
-      transform-origin: 0 0;
-    }
-
-    .demo__colored-block:nth-child(1) {
-      transform: rotate(0deg) skewX(-30deg);
-      background-color: #FD3359;
-    }
-
-    .demo__colored-block:nth-child(2) {
-      transform: rotate(120deg) skewX(-30deg);
-      background-color: #F4D302;
-    }
-
-    .demo__colored-block:nth-child(3) {
-      transform: rotate(240deg) skewX(-30deg);
-      background-color: #21BDFF;
-    }
-
-    .demo__inner {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .demo__numbers {
-      overflow: visible;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 100px;
-      height: 100px;
-      margin-left: -50px;
-      margin-top: -50px;
-    }
-
-    .demo__numbers-path {
-      fill: none;
-      stroke-width: 10px;
-      stroke: #fff;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 0, 518.05507;
-      stroke-dashoffset: 0;
-      animation: numAnim 4s ease-in-out infinite;
-      opacity: 0;
-    }
-
-    .demo__text {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 500px;
-      height: 100%;
-      margin-left: -250px;
-      text-align: center;
-      line-height: 140px;
-      font-size: 100px;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 15px;
-      transform: translateX(10px);
-      animation: hideText 4s infinite;
-    }
-
-    @keyframes contAnim {
-      15%,
-      100% {
-        margin-left: -250px;
-        width: 500px;
-      }
-      25%,
-      90% {
-        margin-left: -70px;
-        width: 140px;
-      }
-    }
-
-    @keyframes numAnim {
-      15% {
-        stroke-dasharray: 0, 518.05507;
-        stroke-dashoffset: 0;
-        opacity: 0;
-      }
-      25%,
-      41% {
-        opacity: 1;
-        stroke-dasharray: 144.42566, 518.05507;
-        stroke-dashoffset: -40;
-      }
-      53%,
-      66% {
-        stroke-dasharray: 136.02162, 518.05507;
-        stroke-dashoffset: -227.2387;
-      }
-      76% {
-        stroke-dasharray: 113.47512, 518.05507;
-        stroke-dashoffset: -445.89957;
-      }
-      88%,
-      100% {
-        stroke-dasharray: 72.15549, 518.05507;
-        stroke-dashoffset: -445.89957;
-      }
-      92% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes rotation {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes demoAnim {
-      15% {
-        border-radius: 20px;
-        transform: rotate(0);
-      }
-      30%,
-      43% {
-        border-radius: 50%;
-        transform: rotate(360deg);
-      }
-      52%,
-      65% {
-        border-radius: 0;
-        transform: rotate(720deg);
-      }
-      78%,
-      90% {
-        border-radius: 50%;
-        transform: rotate(1080deg);
-      }
-      100% {
-        border-radius: 20px;
-        transform: rotate(1440deg);
-      }
-    }
-
-    @keyframes hideText {
-      15%,
-      100% {
-        opacity: 1;
-      }
-      20%,
-      96% {
-        opacity: 0;
-      }
-    }
-
-    .video-cover {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,.5);
-    }
-
-    dfn {
-      padding: 5px;
-      color: black;
-      font-weight: 700;
-      font-style: normal;
-      background: #FFCD01;
-    }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="J.W.Jeon">
+	<title>LIKELION :: 아주대학교</title>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" type="text/css">
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css' type='text/css'>
+	<link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
 
-<body class="index-page">
-  <div class="preloader">
-    <div class="demo">
-      <div class="demo__colored-blocks">
-        <div class="demo__colored-blocks-rotater">
-          <div class="demo__colored-block"></div>
-          <div class="demo__colored-block"></div>
-          <div class="demo__colored-block"></div>
-        </div>
-        <div class="demo__colored-blocks-inner"></div>
-        <div class="demo__text">WAIT..</div>
-      </div>
-      <div class="demo__inner">
-        <svg class="demo__numbers" viewBox="0 0 100 100">
-      <defs>
-        <path class="demo__num-path-1" d="M40,28 55,22 55,78"/>
-        <path class="demo__num-join-1-2" d="M55,78 55,83 a17,17 0 1,0 34,0 a20,10 0 0,0 -20,-10"/>
-        <path class="demo__num-path-2" d="M69,73 l-35,0 l30,-30 a16,16 0 0,0 -22.6,-22.6 l-7,7"/>
-        <path class="demo__num-join-2-3" d="M28,69 Q25,44 34.4,27.4"/>
-        <path class="demo__num-path-3" d="M30,20 60,20 40,50 a18,15 0 1,1 -12,19"/>
-      </defs>
-      <path class="demo__numbers-path"
-            d="M-10,20 60,20 40,50 a18,15 0 1,1 -12,19
-               Q25,44 34.4,27.4
-               l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73
-               a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83
-               l0,-61 L40,28" />
-    </svg>
-      </div>
-    </div>
-  </div>
-  <!-- Navbar -->
-  <nav class="navbar navbar-toggleable-md bg-info fixed-top navbar-transparent " color-on-scroll="500">
-    <div class="container">
-      <div class="navbar-translate">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
-        <a class="navbar-brand" href="./index.html" rel="tooltip" title="아주대학교 멋쟁이사자처럼" data-placement="bottom" target="_blank">
-                    <img src="./assets/img/likelion-white.png" width="20%">
-                </a>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="방문 후 좋아요" data-placement="bottom" href="https://www.facebook.com/aulikelion" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                            <p class="hidden-lg-up">Facebook</p>
-                        </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="아주대 멋사를 팔로우하세요" data-placement="bottom" href="https://www.instagram.com/aulikelion" target="_blank">
-                            <i class="fa fa-instagram"></i>
-                            <p class="hidden-lg-up">Instagram</p>
-                        </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- End Navbar -->
-  <div class="wrapper">
-    <div class="page-header clear-filter" filter-color="ajou-blue">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/1498359907499.jpg');">
-      </div>
-      <div class="container">
-        <div class="content-center brand">
-          <img class="n-logo" src="./assets/img/aulikelion.png" alt="">
-          <h1 class="h1-seo">우리는, 하고 싶은게 너무나도 많은</h1>
-          <h3>아주대학교 멋쟁이사자처럼</h3>
-        </div>
-        <h6 class="category category-absolute">Organization by
-                    <a href="http://likelion.org/" target="_blank">
-                        <img src="./assets/img/likelion-white.png" alt="likelion-logo" width="80px" />
-                    </a>.
-                    <br>아주대학교 멋쟁이사자처럼 | 경기도 수원시 영통구 월드컵로 206 아주대학교 (원천동)
-        </h6>
-      </div>
-    </div>
-    <div class="main">
-      <div class="section section-nucleo-icons" data-background-color="black">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-12">
-              <h2 class="title"><img src="./assets/img/likelion-white.png" width="50%"></h2>
-              <blockquote class="description">
-                  <dfn>멋쟁이사자처럼</dfn>은 기술적 장벽 때문에<br>아이디어를 세상에 표현하지 못한 비전공자분들과<br>감동의 순간을 만들어 가고 싶습니다.<br>여러분의 모든 아이디어, <strong>웹프로그래밍</strong>을 통해 실현하세요.<hr>
-              </blockquote>
-              <ul>
-                <li>루비 및 레일즈 통한 <strong>웹프로그래밍</strong> 스터디</li>
-                <li>Git, Slack 등 협업도구 통한 <strong>협업 경험</strong></li>
-                <li>아이디어의 <strong>실제 서비스화</strong></li>
-                <li>다양한 분야에서의 <strong>인적 교류</strong></li>
-                <li><strong>온라인 강의 (uniLion)</strong> 수강</li>
-              </ul>
-              <a href="http://likelion.net" class="btn btn-primary btn-round btn-lg" target="_blank">멋쟁이사자처럼</a>
-            </div>
-            <div class="col-lg-6 col-md-12 text-center" style="padding: 5rem;">
-              <img src="./assets/img/hack-your-life-white.png" width="300px">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" id="carousel">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-8">
-              <div id="carouselExampleControls" class="carousel slide">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                    <img class="d-block" src="assets/img/1498359907499.jpg" alt="Halfton">
-                    <div class="black-cover"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>교내 MT(교내 아이디어톤)</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="assets/img/carousel-2.jpg" alt="벚꽃축제">
-                    <div class="black-cover"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>벚꽃축제</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="assets/img/ideathon.jpeg" alt="Ideathon">
-                    <div class="black-cover"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>대학연합아이디어톤 (역삼)</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="assets/img/21462773_1621456721212451_2007008076335327505_n.jpg" alt="hackathon1">
-                    <div class="black-cover"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>2017 멋사 해커톤 (여의도)</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="assets/img/21557491_1621456194545837_2284759230569326304_n.jpg" alt="hackathon2">
-                    <div class="black-cover"></div>
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>2017 멋사 해커톤 (여의도)</h5>
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                      <i class="now-ui-icons arrows-1_minimal-left"></i>
-                                  </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                      <i class="now-ui-icons arrows-1_minimal-right"></i>
-                                  </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section section-tabs">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10 offset-md-1 col-xl-6 offset-xl-0">
-              <p class="category">학생들의 서비스</p>
-              <!-- Nav tabs -->
-              <div class="card">
-                <ul class="nav nav-tabs justify-content-center" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-                        데일리후보
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                                          대동제정보
-                                        </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
-                      동아리정보
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
-                        메르스맵(5기이전)
-                    </a>
-                  </li>
-                </ul>
-                <div class="card-block">
-                  <!-- Tab panes -->
-                  <div class="tab-content text-center">
-                    <div class="tab-pane active" id="home" role="tabpanel">
-                      <p>
-                        <img src="assets/img/candi.png" alt="candidaily">
-                        <hr> 대선후보의 행보를 타임라인 형태로 제공하는 서비스입니다.
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="profile" role="tabpanel">
-                      <p>
-                        <img src="assets/img/ajoufestival.png" alt="aufestival">
-                        <hr> 교내 학생들에게 축제 정보에 좀 더 쉽게 접근할 수 있도록 부스 및 라인업 정보를 제공합니다. 16년과 17년도에 각각 개발되었으며, 매년 1만건 이상의 접속 기록을 달성하였습니다. (16년도 9천건, 17년도 1만 3천건)
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="messages" role="tabpanel">
-                      <p>
-                        <img src="assets/img/auclub.png" alt="auclub">
-                        <hr> 교내에 존재하는 동아리에 대한 정보를 한눈에 볼 수 있도록 카테고리별로 상세 내용을 제공합니다.
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="settings" role="tabpanel">
-                      <p>
-                        <img src="assets/img/mersmap.jpg" alt="mersmap">
-                        <hr> 네티즌들의 참여로 중동호흡기증후군(메르스) 감염 환자들이 거쳐 간 것으로 파악되는 전국 병원을 정리해 화제가 됐던 웹사이트입니다. 아주대학교 멋쟁이사자처럼 출신의 학생이 개발하였으며, 당시 500만건의 접속 기록을 달성하기도 했습니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-10 offset-md-1 col-xl-6 offset-xl-0">
-              <p class="category">올해의 이벤트</p>
-              <!-- Tabs with Background on Card -->
-              <div class="card">
-                <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="orange">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#home1" role="tab">아이디어톤(연합)</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#profile1" role="tab">아이디어톤(교내)</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#messages1" role="tab">경기하프톤</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#hackathon" role="tab">멋사 해커톤</a>
-                  </li>
-                </ul>
-                <div class="card-block">
-                  <!-- Tab panes -->
-                  <div class="tab-content text-center">
-                    <div class="tab-pane active" id="home1" role="tabpanel">
-                      <p>
-                        <img src="assets/img/ideathon.jpeg" alt="">
-                        <hr>
-                        <strong>연세대학교, 아주대학교, 동덕여자대학교, 중앙대학교, 한양대학교(에리카캠퍼스)</strong> 5개교가 한자리에 모였습니다! 17년 5월 3일, 역삼 마루 180에서 각자 자신이 개발하고자하는 아이디어를 설계, 준비하고 발표하는 시간을 가졌습니다. 아이디어톤 페이지에서 각자 기획한 아이디어에 대해 투표를 진행, 시상하였습니다.
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="profile1" role="tabpanel">
-                      <p>
-                        <img src="assets/img/ideathon.jpg" alt="">
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="messages1" role="tabpanel">
-                      <p>
-                        <img src="assets/img/aulikelion-back.jpg" alt="">
-                        <hr>
-                        <strong>경희대학교(국제), 아주대학교, 단국대학교(천안), 남서울대학교, 강남대학교, 성공회대학교</strong> 6개교가 한자리에 모였습니다! 17년 5월 28일, 경기창조문화허브(광교)에서 각자 자신이 개발하고자하는 아이디어를 설계, 개발하고 발표하는 시간을 가졌습니다. 하프톤 페이지에서 각자 개발한 아이디어에 대해 투표를 진행, 시상하였습니다.
-                      </p>
-                    </div>
-                    <div class="tab-pane" id="hackathon" role="tabpanel">
-                      <p>
-                        <img src="assets/img/21462773_1621456721212451_2007008076335327505_n.jpg" alt="">
-                        <hr>
-                        여의도 KBS아레나에서 전국 모든 대학교의 멋사 5기 학생들이 모여 해커톤을 진행했습니다!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Tabs on plain Card -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Typography -->
-      <div class="section">
-        <div class="container">
-          <h3 class="title">후원사</h3>
-          <div id="typography">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <img src="assets/img/partners.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="space-50"></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="container text-center">
-          <div class="row justify-content-md-center">
-            <div class="col-md-12 col-lg-8">
-              <h2 class="title">지원 관련</h2>
-              <h5 class="description"><strong></strong></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="footer" data-background-color="black">
-      <div class="container">
-        <nav>
-          <ul>
-            <li>
-              <a href="http://list.likelion.org">
-                                전국 멋사
-                            </a>
-            </li>
-            <li>
-              <a href="mailto:ajou@likelion.org">
-                                문의(이메일)
-                            </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>,
-          <a href="http://likelion.org" target="_blank">LIKELION</a>.
-        </div>
-      </div>
-    </footer>
-  </div>
+<body>
+	<div class="preloader">
+	    <div class="preloader-wrapper">
+	      <div class="colored-blocks">
+	        <div class="colored-blocks-rotater">
+	          <div class="colored-block"></div>
+	          <div class="colored-block"></div>
+	          <div class="colored-block"></div>
+	        </div>
+	        <div class="colored-blocks-inner"></div>
+	        <div class="text">WAIT..</div>
+	      </div>
+	      <div class="inner">
+	        <svg class="numbers" viewBox="0 0 100 100">
+	      <defs>
+	        <path class="num-path-1" d="M40,28 55,22 55,78"/>
+	        <path class="num-join-1-2" d="M55,78 55,83 a17,17 0 1,0 34,0 a20,10 0 0,0 -20,-10"/>
+	        <path class="num-path-2" d="M69,73 l-35,0 l30,-30 a16,16 0 0,0 -22.6,-22.6 l-7,7"/>
+	        <path class="num-join-2-3" d="M28,69 Q25,44 34.4,27.4"/>
+	        <path class="num-path-3" d="M30,20 60,20 40,50 a18,15 0 1,1 -12,19"/>
+	      </defs>
+	      <path class="numbers-path"
+	            d="M-10,20 60,20 40,50 a18,15 0 1,1 -12,19
+	               Q25,44 34.4,27.4
+	               l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73
+	               a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83
+	               l0,-61 L40,28" />
+	    </svg>
+	      </div>
+	    </div>
+	  </div>
+	<nav class="gnb">
+		<a href="http://aulikelion.github.io"><img alt="logo" class="logo" src="images/logo.svg" width="100"></a>
+	</nav>
+	<main>
+		<section id="intro">
+			<div class="universe-wrapper">
+				<div id='stars'></div>
+				<div id='stars2'></div>
+				<div id='stars3'></div>
+			</div>
+			<header>
+				<span>우리는,</span><br>
+				<span>하고 싶은 것들이</span><br>
+				<span>너무나 많으니까,</span><br>
+				<span>최고로 멋진 아주대 멋쟁이사자처럼</span>
+			</header>
+			<span id="copyright">ORGANIZATION BY <img src="./assets/img/likelion-white.png" width="80px">.<br>경기도 수원시 영통구 월드컵로 206 (아주대학교)</span>
+		</section>
+		<section id="about">
+			<header>HACK YOUR LIFE</header>
+			<small>내 아이디어를 내 손으로 실현하다</small>
+			<hr>
+			<p>
+				<dfn>멋쟁이 사자처럼</dfn>은 기술적 장벽 때문에<br>
+				아이디어를 세상에 표현하지 못한 비전공자분들과<br>
+				감동의 순간을 만들어 가고 싶습니다.<br>
+				여러분의 모든 아이디어, 웹프로그래밍을 통해 실현하세요.
+			</p>
+			<ul class="features">
+				<li>루비 및 레일즈 통한 <strong>웹프로그래밍 스터디</strong></li>
+				<li>Git, Slack 등 협업도구 통한 <strong>협업 경험</strong></li>
+				<li>아이디어의 실제 <strong>서비스화</strong></li>
+				<li>다양한 분야에서의 <strong>인적 교류</strong></li>
+				<li><strong>온라인 강의</strong> (uniLion) 수강</li>
+			</ul>
+		</section>
+		<section id="lions-2017">
+			<header>5기 사자들</header>
+			<div class="activities">
+				<article class="active">
+					<h2>멋사 해커톤 <small>여의도 KBS</small></h2>
+				</article>
+				<article>
+					<h2>교내 아이디어톤 <small>수원역</small></h2>
+				</article>
+				<article>
+					<h2>멋사 수업 <small>교내 팔달관</small></h2>
+				</article>
+				<article>
+					<h2>경기하프톤 <small>광교 문화창조허브</small></h2>
+				</article>
+				<article>
+					<h2>교내 아이디어톤 <small>수원역</small></h2>
+				</article>
+			</div>
+		</section>
+		<section id="sponsors">
+			<header>후원사</header>
+			<img src="images/partners.png" alt="partners">
+		</section>
+		<section id="apply">
+			<div class="cover"></div>
+			<div class="content">
+				<header>멋쟁이사자처럼 지원</header>
+				<hr>
+				<h2>2018년 지원, 선발이 완료되었습니다.<br><small>지원해주신 모든 분들께 감사드립니다.</small></h2>
+			</div>
+		</section>
+		<footer>
+			<a href="http://likelion.net">멋쟁이사자처럼</a>
+			<span>&copy; 2018 ~  LIKELION.</span>
+		</footer>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		 var cnt = 1;
+		 $(document).ready(function(){
+		 	setInterval(changeActs, 5000);
+    		$(".preloader").css('display', 'none');
+		 });
+		 
+		 function changeActs(){
+		 	cnt = cnt + 1;
+		 	$("#lions-2017 article").removeClass("active");
+		 	$("#lions-2017 article:nth-of-type("+ (cnt % $("#lions-2017 article").length+1) +")").addClass("active");
+		 }
+	</script>
 </body>
-<!--   Core JS Files   -->
-<script src="./assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/tether.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="./assets/js/plugins/bootstrap-switch.js"></script>
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="./assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
-<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/now-ui-kit.js" type="text/javascript"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    // the body of this function is in assets/js/now-ui-kit.js
-    $(".preloader").css('display', 'none');
-    var header = $('.page-image-header');
-    var backgrounds = new Array(
-      'url(assets/img/aulikelion-back.jpg)',
-      'url(assets/img/ideathon.jpg)',
-      'url(assets/img/ideathon.jpg)',
-      'url(assets/img/ideathon.jpg)'
-    );
-    var current = 0;
-
-    function nextBackground() {
-      header.css('background-image',backgrounds[current = ++current % backgrounds.length]);
-      setTimeout(nextBackground, 1000);
-    }
-
-    setTimeout(nextBackground, 1000);
-    header.css('background', backgrounds[0]);
-  });
-
-  function scrollToDownload() {
-
-    if ($('.section-download').length != 0) {
-      $("html, body").animate({
-        scrollTop: $('.section-download').offset().top
-      }, 1000);
-    }
-  }
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111943810-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-111943810-1');
-</script>
 
 </html>
